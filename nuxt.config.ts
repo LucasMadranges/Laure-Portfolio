@@ -6,6 +6,7 @@ export default defineNuxtConfig({
         '@nuxt/eslint',
         '@nuxt/hints',
         '@vueuse/nuxt',
+        'motion-v/nuxt',
     ],
     compatibilityDate: '2025-07-15',
     devtools: { enabled: true },
@@ -17,4 +18,7 @@ export default defineNuxtConfig({
             },
         ],
     },
-})
+    motionV: {
+        directives: true,
+    },
+});

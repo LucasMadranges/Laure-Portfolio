@@ -11,6 +11,10 @@
     font-family: 'DM Sans', sans-serif;
 }
 
+html {
+    overflow: hidden;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;

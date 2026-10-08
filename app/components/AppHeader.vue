@@ -19,20 +19,39 @@ useResizeObserver(header, (entries) => {
     <header ref="header">
         <span>Laure Everwyn</span>
 
-        <div v-if="mobileMenu" class="bg-mobile" @click="handleMobileMenu" />
+        <AnimatePresence>
+            <div
+                v-if="mobileMenu"
+                v-motion="{
+                    initial: { opacity: 0 },
+                    animate: { opacity: 1 },
+                    exit: { opacity: 0 },
+                    transition: { duration: 0.4, ease: 'easeOut' },
+                }"
+                class="bg-mobile"
+                @click="handleMobileMenu"
+            />
 
-        <nav v-if="mobileMenu" class="menu">
-            <button id="btn-close" class="btn-mobile" @click="handleMobileMenu">
-                <XIcon />
-            </button>
-            <NuxtLink class="nav-link" to="#">Qui suis-je ?</NuxtLink>
-            <NuxtLink class="nav-link" to="#">Parcours</NuxtLink>
-            <NuxtLink class="nav-link" to="#">Projets</NuxtLink>
-            <NuxtLink class="nav-link" to="#">Contact</NuxtLink>
-        </nav>
+            <nav
+                v-if="mobileMenu"
+                v-motion="{
+                    initial: { x: 225 },
+                    animate: { x: 0 },
+                    exit: { x: 225 },
+                    transition: { duration: 0.4, ease: 'easeOut' },
+                }"
+                class="menu"
+            >
+                <NuxtLink class="nav-link" to="#">Qui suis-je ?</NuxtLink>
+                <NuxtLink class="nav-link" to="#">Parcours</NuxtLink>
+                <NuxtLink class="nav-link" to="#">Projets</NuxtLink>
+                <NuxtLink class="nav-link" to="#">Contact</NuxtLink>
+            </nav>
+        </AnimatePresence>
 
         <button id="btn-open" @click="handleMobileMenu">
-            <MenuIcon />
+            <MenuIcon v-if="!mobileMenu" />
+            <XIcon v-else />
         </button>
     </header>
 </template>
@@ -56,8 +75,12 @@ header {
         background-color: transparent;
         width: fit-content;
 
-        &#btn-close {
-            align-self: flex-end;
+        &#btn-open {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+
+            z-index: 2;
         }
     }
 
@@ -70,7 +93,7 @@ header {
         display: flex;
         flex-direction: column;
         gap: 12px;
-        padding: 12px;
+        padding: 48px 12px 12px 12px;
 
         background-color: white;
         width: 200px;
