@@ -8,16 +8,8 @@ export default defineNuxtConfig({
         '@vueuse/nuxt',
         'motion-v/nuxt',
     ],
-    compatibilityDate: '2025-07-15',
+    compatibilityDate: '2026-10-08',
     devtools: { enabled: true },
-    fonts: {
-        provider: 'google', // sets default provider
-        families: [
-            {
-                name: 'DM Sans',
-            },
-        ],
-    },
     motionV: {
         directives: true,
     },

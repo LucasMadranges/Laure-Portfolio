@@ -118,13 +118,14 @@ header {
         top: 0;
     }
 
-    @media (min-width: 750px) {
+    @media only screen and (min-device-width: 750px) {
         padding: 24px;
 
         nav.menu {
             flex-direction: row;
             position: static;
             gap: 32px;
+            padding-top: 12px;
 
             width: fit-content;
             height: fit-content;
