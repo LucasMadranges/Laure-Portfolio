@@ -1,20 +1,3 @@
-<script setup lang="ts">
-import { MenuIcon, XIcon } from '@lucide/vue';
-import { useResizeObserver } from '@vueuse/core';
-
-const mobileMenu = ref(false);
-const header = useTemplateRef('header');
-
-function handleMobileMenu() {
-    mobileMenu.value = !mobileMenu.value;
-}
-
-useResizeObserver(header, (entries) => {
-    if (entries[0]?.borderBoxSize[0]?.inlineSize == null) return;
-    mobileMenu.value = entries[0]?.borderBoxSize[0]?.inlineSize >= 750;
-});
-</script>
-
 <template>
     <header ref="header">
         <span>Laure Everwyn</span>
@@ -55,6 +38,23 @@ useResizeObserver(header, (entries) => {
         </button>
     </header>
 </template>
+
+<script setup lang="ts">
+import { MenuIcon, XIcon } from '@lucide/vue';
+import { useResizeObserver } from '@vueuse/core';
+
+const mobileMenu = ref(false);
+const header = useTemplateRef('header');
+
+function handleMobileMenu() {
+    mobileMenu.value = !mobileMenu.value;
+}
+
+useResizeObserver(header, (entries) => {
+    if (entries[0]?.borderBoxSize[0]?.inlineSize == null) return;
+    mobileMenu.value = entries[0]?.borderBoxSize[0]?.inlineSize >= 750;
+});
+</script>
 
 <style scoped>
 header {
