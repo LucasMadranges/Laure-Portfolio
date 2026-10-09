@@ -48,4 +48,8 @@ body {
         }
     }
 }
+
+.scroll-canceled {
+    overflow: hidden;
+}
 </style>

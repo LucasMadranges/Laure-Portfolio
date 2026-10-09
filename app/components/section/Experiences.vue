@@ -105,5 +105,37 @@ section {
             z-index: 1;
         }
     }
+
+    @media only screen and (min-width: 750px) {
+        .experiences-container {
+            flex-direction: row;
+            justify-content: space-around;
+
+            text-align: center;
+
+            .experiences-element {
+                padding-left: 0px;
+                padding-top: 48px;
+
+                align-items: center;
+
+                &::after {
+                    left: 50%;
+                    top: 0px;
+                    transform: translateX(-50%);
+                }
+            }
+
+            &::after {
+                border-top: 3px solid #e9e9f0;
+
+                width: 100%;
+                height: 0;
+
+                left: 0;
+                top: 16px;
+            }
+        }
+    }
 }
 </style>
