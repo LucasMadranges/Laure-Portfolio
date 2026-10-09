@@ -24,7 +24,9 @@
             </div>
         </div>
 
-        <NuxtImg class="image" src="/laure.webp" height="300" width="300" />
+        <div class="image-container">
+            <NuxtImg class="image" src="/laure.webp" height="300" width="300" />
+        </div>
     </section>
 </template>
 
@@ -70,22 +72,28 @@ section.hero {
         }
     }
 
-    .image {
-        object-fit: cover;
-        width: 100%;
-        border-radius: 12px;
+    .image-container {
         position: relative;
+
+        .image {
+            object-fit: cover;
+            width: calc(100% - 16px);
+            border-radius: 12px;
+        }
 
         &::after {
             content: '';
             background-color: var(--color-primary);
             border-radius: 12px;
 
-            width: 100px;
-            height: 100px;
+            width: calc(100% - 16px);
+            height: 100%;
 
             position: absolute;
-            right: -12px;
+            right: 0px;
+            bottom: -8px;
+
+            z-index: -1;
         }
     }
 
@@ -100,8 +108,17 @@ section.hero {
     @media only screen and (min-width: 600px) {
         flex-direction: row;
 
-        .image {
-            width: 250px;
+        .image-container {
+            .image {
+                width: 250px;
+            }
+
+            &::after {
+                width: 250px;
+
+                right: -12px;
+                bottom: -6px;
+            }
         }
     }
 }
