@@ -7,6 +7,8 @@
         <SectionContactInfo />
 
         <SectionWhoAmI />
+
+        <SectionExperiences />
     </main>
 </template>
 

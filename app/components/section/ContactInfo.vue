@@ -4,7 +4,7 @@ import { MailIcon, PhoneIcon, PinIcon } from '@lucide/vue';
 
 <template>
     <section class="contact-info">
-        <span class="contact-title">Contact</span>
+        <h2 class="contact-title">Contact</h2>
 
         <div class="contact-global-container">
             <div class="contact-container">
