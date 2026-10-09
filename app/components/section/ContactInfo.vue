@@ -49,7 +49,12 @@ import { MailIcon, PhoneIcon, PinIcon } from '@lucide/vue';
                         />
                     </div>
 
-                    <NuxtLink class="contact-link" to="">LinkedIn</NuxtLink>
+                    <NuxtLink
+                        class="contact-link"
+                        to="https://www.linkedin.com/in/laure-everwyn-58217738b/"
+                        target="_blank"
+                        >LinkedIn</NuxtLink
+                    >
                 </div>
             </div>
         </div>
