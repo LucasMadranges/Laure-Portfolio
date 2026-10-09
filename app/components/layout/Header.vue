@@ -48,6 +48,9 @@ const header = useTemplateRef('header');
 
 function handleMobileMenu() {
     mobileMenu.value = !mobileMenu.value;
+    document.body.classList.contains('scroll-canceled')
+        ? document.body.classList.remove('scroll-canceled')
+        : document.body.classList.add('scroll-canceled');
 }
 
 useResizeObserver(header, (entries) => {
@@ -58,12 +61,17 @@ useResizeObserver(header, (entries) => {
 
 <style scoped>
 header {
+    position: fixed;
+    background-color: white;
+    border-bottom: 1px solid var(--color-border);
+    width: 100%;
+    padding: 12px;
+
     display: flex;
-    position: relative;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
-    border-bottom: 1px solid var(--color-border);
+
+    z-index: 5;
 
     .nav-link {
         text-decoration: none;
