@@ -3,7 +3,7 @@ import { MailIcon, PhoneIcon, PinIcon } from '@lucide/vue';
 </script>
 
 <template>
-    <section class="contact-info">
+    <section>
         <h2 class="contact-title">Contact</h2>
 
         <div class="contact-global-container">
@@ -62,7 +62,7 @@ import { MailIcon, PhoneIcon, PinIcon } from '@lucide/vue';
 </template>
 
 <style scoped>
-section.contact-info {
+section {
     background-color: #f0f0f0;
     padding: 16px;
     border-radius: 12px;

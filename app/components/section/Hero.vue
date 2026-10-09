@@ -1,5 +1,5 @@
 <template>
-    <section class="hero">
+    <section>
         <div class="hero-content">
             <h1>Laure Everwyn</h1>
 
@@ -31,10 +31,11 @@
 </template>
 
 <style scoped>
-section.hero {
+section {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    padding-top: 36px;
 
     .hero-content {
         display: flex;
