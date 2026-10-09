@@ -13,16 +13,26 @@
 
             <div class="tags-container">
                 <Tags label="Créative" />
-                <Tags label="Créative" />
-                <Tags label="Créative" />
-                <Tags label="Créative" />
+                <Tags label="Productive" bg-color="#DDF6DF" />
+                <Tags label="Adaptabilité" bg-color="#FFEBDD" />
+                <Tags label="Permis B" bg-color="#FFF7C9" />
+            </div>
+
+            <div class="link-container">
+                <Button to="#" variant="primary">Voir mes projets</Button>
+                <Button to="#" variant="secondary">Me contacter</Button>
             </div>
         </div>
+
+        <NuxtImg class="image" src="/laure.webp" height="300" width="300" />
     </section>
 </template>
 
 <style scoped>
 section.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     padding: 32px 12px;
 
     .hero-content {
@@ -52,6 +62,46 @@ section.hero {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
+        }
+
+        .link-container {
+            display: flex;
+            gap: 8px;
+        }
+    }
+
+    .image {
+        object-fit: cover;
+        width: 100%;
+        border-radius: 12px;
+        position: relative;
+
+        &::after {
+            content: '';
+            background-color: var(--color-primary);
+            border-radius: 12px;
+
+            width: 100px;
+            height: 100px;
+
+            position: absolute;
+            right: -12px;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        margin: 0 auto;
+    }
+
+    @media only screen and (min-width: 750px) {
+        padding: 32px 24px;
+    }
+
+    @media only screen and (min-width: 600px) {
+        flex-direction: row;
+
+        .image {
+            width: 250px;
         }
     }
 }

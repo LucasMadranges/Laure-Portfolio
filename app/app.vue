@@ -26,10 +26,6 @@
     padding: 0;
 }
 
-html {
-    overflow: hidden;
-}
-
 body {
     color: var(--color-text);
 }
