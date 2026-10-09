@@ -89,7 +89,7 @@ section.contact-info {
 
                 .contact-icon {
                     padding: 4px;
-                    background-color: #d9b8ff;
+                    background-color: var(--color-secondary);
                     width: fit-content;
                     height: 32px;
                     border-radius: 8px;
@@ -117,11 +117,12 @@ section.contact-info {
     }
 
     @media only screen and (min-width: 500px) {
-        gap: 32px;
+        gap: 48px;
+        padding: 32px;
 
         .contact-global-container {
             flex-direction: row;
-            gap: 32px;
+            gap: 48px;
 
             .contact-container {
                 gap: 24px;

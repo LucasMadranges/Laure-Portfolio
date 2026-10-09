@@ -5,6 +5,8 @@
         <SectionHero />
 
         <SectionContactInfo />
+
+        <SectionWhoAmI />
     </main>
 </template>
 
@@ -13,6 +15,8 @@
 
 :root {
     --color-primary: #9500ff;
+    --color-secondary: #d9b8ff;
+    --color-tertiary: #f7edff;
 
     --color-text: #2f384c;
 
