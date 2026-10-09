@@ -3,6 +3,8 @@
 
     <main>
         <SectionHero />
+
+        <SectionContactInfo />
     </main>
 </template>
 
@@ -28,5 +30,16 @@
 
 body {
     color: var(--color-text);
+
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding: 32px 12px;
+
+        @media only screen and (min-width: 750px) {
+            padding: 32px 24px;
+        }
+    }
 }
 </style>

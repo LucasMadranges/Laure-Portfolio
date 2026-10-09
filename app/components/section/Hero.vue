@@ -35,7 +35,6 @@ section.hero {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    padding: 32px 12px;
 
     .hero-content {
         display: flex;
@@ -95,14 +94,6 @@ section.hero {
 
             z-index: -1;
         }
-    }
-
-    @media only screen and (min-width: 1024px) {
-        margin: 0 auto;
-    }
-
-    @media only screen and (min-width: 750px) {
-        padding: 32px 24px;
     }
 
     @media only screen and (min-width: 600px) {
