@@ -10,7 +10,7 @@ import { MailIcon, PhoneIcon, PinIcon } from '@lucide/vue';
             <div class="contact-container">
                 <div class="contact-element">
                     <div class="contact-icon">
-                        <PhoneIcon />
+                        <PhoneIcon height="20" width="20" />
                     </div>
 
                     <NuxtLink class="contact-link" to="tel:07.67.17.87.00"
@@ -20,7 +20,7 @@ import { MailIcon, PhoneIcon, PinIcon } from '@lucide/vue';
 
                 <div class="contact-element">
                     <div class="contact-icon">
-                        <MailIcon />
+                        <MailIcon height="20" width="20" />
                     </div>
 
                     <NuxtLink
@@ -34,7 +34,7 @@ import { MailIcon, PhoneIcon, PinIcon } from '@lucide/vue';
             <div class="contact-container">
                 <div class="contact-element">
                     <div class="contact-icon">
-                        <PinIcon />
+                        <PinIcon height="20" width="20" />
                     </div>
 
                     <NuxtLink>Métropole Lilloise</NuxtLink>
@@ -44,8 +44,8 @@ import { MailIcon, PhoneIcon, PinIcon } from '@lucide/vue';
                     <div class="contact-icon">
                         <NuxtImg
                             src="/icons/linkedin.svg"
-                            height="24"
-                            width="24"
+                            height="20"
+                            width="20"
                         />
                     </div>
 
@@ -93,10 +93,11 @@ section {
                 gap: 8px;
 
                 .contact-icon {
-                    padding: 4px;
+                    display: flex;
+                    padding: 8px;
                     background-color: var(--color-secondary);
                     width: fit-content;
-                    height: 32px;
+                    height: fit-content;
                     border-radius: 8px;
 
                     svg {
