@@ -36,29 +36,115 @@
             </div>
         </div>
 
-        <div class="formations">
-            <h3>Formations</h3>
+        <div class="flex-container">
+            <div class="formations">
+                <h3>Formations</h3>
 
-            <div class="formations-container">
-                <div class="formations-element">
-                    <span>2025 - Aujourd'hui</span>
-                    <h4>MyDigitalSchool, Lille</h4>
-                    <p>Bachelor digital, design UX/UI</p>
+                <div class="formations-container">
+                    <div class="formations-element">
+                        <span>2025 - Aujourd'hui</span>
+                        <h4>MyDigitalSchool, Lille</h4>
+                        <p>Bachelor digital, design UX/UI</p>
+                    </div>
+                    <div class="formations-element">
+                        <span>2022 - 2025</span>
+                        <h4>Lycée Arthur Rimbaud, Sin-le-Noble</h4>
+                        <p>Spécialités mathématiques et NSI · Mention Bien</p>
+                    </div>
+                    <div class="formations-element">
+                        <span>2018 - 2022</span>
+                        <h4>Collège Val de la Sensée, Arleux</h4>
+                        <p>Mention Très bien</p>
+                    </div>
                 </div>
-                <div class="formations-element">
-                    <span>2022 - 2025</span>
-                    <h4>Lycée Arthur Rimbaud, Sin-le-Noble</h4>
-                    <p>Spécialités mathématiques et NSI · Mention Bien</p>
-                </div>
-                <div class="formations-element">
-                    <span>2018 - 2022</span>
-                    <h4>Collège Val de la Sensée, Arleux</h4>
-                    <p>Mention Très bien</p>
+            </div>
+
+            <div class="competences">
+                <h3>Compétences</h3>
+
+                <div class="competences-container">
+                    <div class="competences-element">
+                        <div class="competences-img">
+                            <NuxtImg
+                                src="/icons/figma.svg"
+                                height="20"
+                                width="20"
+                            />
+                        </div>
+                        <span>Figma</span>
+                    </div>
+
+                    <div class="competences-element">
+                        <div class="competences-img">
+                            <NuxtImg
+                                src="/icons/indesign.svg"
+                                height="20"
+                                width="20"
+                            />
+                        </div>
+                        <span>InDesign</span>
+                    </div>
+
+                    <div class="competences-element">
+                        <div class="competences-img">
+                            <NuxtImg
+                                src="/icons/wordpress.svg"
+                                height="20"
+                                width="20"
+                            />
+                        </div>
+                        <span>Wordpress</span>
+                    </div>
+
+                    <div class="competences-element">
+                        <div class="competences-img">
+                            <NuxtImg
+                                src="/icons/google.svg"
+                                height="20"
+                                width="20"
+                            />
+                        </div>
+                        <span>Suite Google</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="competences"></div>
+        <div class="flex-container">
+            <div class="associatifs">
+                <h3>Associatif</h3>
+
+                <div class="associatifs-container">
+                    <ul class="associatifs-list">
+                        <li>
+                            Maison des Lycéens : organisation d’un bal de fin
+                            d’année et gestion d’événements
+                        </li>
+                        <li>
+                            Bureau des Étudiants : organisation d’événements
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="loisirs">
+                <h3>Loisirs</h3>
+
+                <div class="loisirs-container">
+                    <ul class="loisirs-list">
+                        <li>Musique</li>
+                        <li>Photographie</li>
+                        <li>Coloriage</li>
+                        <li>Crochet</li>
+                    </ul>
+                    <ul class="loisirs-list">
+                        <li>Puzzle</li>
+                        <li>Jeux de société / enquête</li>
+                        <li>Jeux vidéo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -81,6 +167,17 @@ section {
     h4 {
         font-size: 20px;
         font-weight: 700;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @media only screen and (min-width: 750px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
     .professionals {
@@ -235,6 +332,102 @@ section {
     }
 
     .competences {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        padding: 12px;
+
+        .competences-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .competences-element {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                .competences-img {
+                    display: flex;
+                    width: fit-content;
+                    height: fit-content;
+                    padding: 8px;
+                    background-color: white;
+                    border: 2px solid var(--color-primary);
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        @media only screen and (min-width: 750px) {
+            padding: 32px;
+            width: 50%;
+        }
+    }
+
+    .associatifs {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        padding: 12px;
+
+        .associatifs-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .associatifs-list {
+                list-style: inside;
+
+                li::marker {
+                    color: var(--color-primary);
+                }
+
+                li:not(:last-child) {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+
+        @media only screen and (min-width: 750px) {
+            padding: 32px;
+            width: 50%;
+        }
+    }
+
+    .loisirs {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        padding: 12px;
+
+        .loisirs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .loisirs-list {
+                list-style: inside;
+
+                li::marker {
+                    color: var(--color-primary);
+                }
+
+                li:not(:last-child) {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+
+        @media only screen and (min-width: 750px) {
+            padding: 32px;
+            width: 50%;
+        }
     }
 }
 </style>
