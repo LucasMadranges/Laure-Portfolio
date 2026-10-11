@@ -9,6 +9,8 @@
         <SectionWhoAmI />
 
         <SectionExperiences />
+
+        <SectionProjects />
     </main>
 </template>
 
