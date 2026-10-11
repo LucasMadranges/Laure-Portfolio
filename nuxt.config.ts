@@ -7,6 +7,7 @@ export default defineNuxtConfig({
         '@nuxt/hints',
         '@vueuse/nuxt',
         'motion-v/nuxt',
+        'nuxt-lenis',
     ],
     compatibilityDate: '2026-10-08',
     devtools: { enabled: true },

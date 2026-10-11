@@ -1,20 +1,33 @@
 <template>
-    <LayoutHeader />
+    <lenis :options="LenisOptions">
+        <LayoutHeader />
 
-    <main>
-        <SectionHero />
+        <main>
+            <SectionHero />
 
-        <SectionContactInfo />
+            <SectionContactInfo />
 
-        <SectionWhoAmI />
+            <SectionWhoAmI />
 
-        <SectionExperiences />
+            <SectionExperiences />
 
-        <SectionProjects />
+            <SectionProjects />
 
-        <SectionCTA />
-    </main>
+            <SectionCTA />
+        </main>
+
+        <LayoutFooter />
+    </lenis>
 </template>
+
+<script setup lang="ts">
+const LenisOptions = {
+    smooth: true,
+    duration: 1.2,
+    autoRaf: true,
+    direction: 'vertical',
+};
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
