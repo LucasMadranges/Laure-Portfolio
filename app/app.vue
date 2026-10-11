@@ -11,6 +11,8 @@
         <SectionExperiences />
 
         <SectionProjects />
+
+        <SectionCTA />
     </main>
 </template>
 

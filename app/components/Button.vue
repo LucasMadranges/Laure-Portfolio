@@ -43,6 +43,8 @@ withDefaults(defineProps<Props>(), {
         width: fit-content;
 
         font-size: 16px;
+        text-wrap: nowrap;
+        height: fit-content;
     }
 }
 </style>
