@@ -25,10 +25,10 @@
                 }"
                 class="menu"
             >
-                <NuxtLink class="nav-link" to="#">Qui suis-je ?</NuxtLink>
-                <NuxtLink class="nav-link" to="#">Parcours</NuxtLink>
-                <NuxtLink class="nav-link" to="#">Projets</NuxtLink>
-                <NuxtLink class="nav-link" to="#">Contact</NuxtLink>
+                <NuxtLink to="#whoami" class="nav-link">Qui suis-je ?</NuxtLink>
+                <NuxtLink to="#experiences" class="nav-link">Parcours</NuxtLink>
+                <NuxtLink to="#projects" class="nav-link">Projets</NuxtLink>
+                <NuxtLink to="#cta" class="nav-link">Contact</NuxtLink>
             </nav>
         </AnimatePresence>
 

@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section id="whoami">
         <div class="section-title">
             <span>À propos</span>
 

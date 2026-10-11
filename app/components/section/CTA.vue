@@ -1,5 +1,9 @@
+<script setup lang="ts">
+import { MailIcon } from '@lucide/vue';
+</script>
+
 <template>
-    <section>
+    <section id="contact">
         <div>
             <h2>Vous proposez une alternance en design UX/UI ?</h2>
             <span
@@ -8,8 +12,9 @@
             >
         </div>
 
-        <Button to="mailto:laure05everwyn@gmail.com" variant="secondary"
-            >Écrire à Laure</Button
+        <Button to="mailto:laure05everwyn@gmail.com" variant="secondary">
+            <MailIcon :size="20" />
+            Écrire à Laure</Button
         >
     </section>
 </template>

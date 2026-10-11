@@ -17,7 +17,10 @@ withDefaults(defineProps<Props>(), {
 
 <style scoped>
 .btn {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     border: 2px solid var(--color-primary);
 
     width: 100%;
