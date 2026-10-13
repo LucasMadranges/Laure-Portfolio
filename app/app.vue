@@ -1,9 +1,9 @@
 <template>
-    <VueLenis root :options="LenisOptions">
-        <LayoutHeader />
+    <VueLenis root :options="LenisOptions" ref="lenisRef">
+        <LayoutHeader :refApp="lenisRef" />
 
-        <main>
-            <SectionHero />
+        <main ref="mainRef">
+            <SectionHero :refApp="lenisRef" />
             <SectionContactInfo />
             <SectionWhoAmI />
             <SectionProjects />
@@ -17,28 +17,15 @@
 
 <script setup lang="ts">
 import 'lenis/dist/lenis.css';
-import { cancelFrame, frame } from 'motion-v';
+
+const lenisRef = useTemplateRef('lenisRef');
 
 const LenisOptions = {
     smooth: true,
     duration: 1.2,
-    autoRaf: true,
+    autoRef: false,
     direction: 'vertical',
 };
-
-const lenisRef = ref();
-
-function update({ timestamp }) {
-    lenisRef.value?.lenis?.raf(timestamp);
-}
-
-onMounted(() => {
-    frame.update(update, true);
-});
-
-onUnmounted(() => {
-    cancelFrame(update);
-});
 </script>
 
 <style>
@@ -72,16 +59,8 @@ body {
         gap: 32px;
         padding: 32px 12px;
 
-        section {
-            scroll-margin-top: 65px;
-        }
-
         @media only screen and (min-width: 750px) {
             padding: 32px 24px;
-
-            section {
-                scroll-margin-top: 125px;
-            }
         }
     }
 }

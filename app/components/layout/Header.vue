@@ -1,6 +1,27 @@
 <template>
-    <header ref="header">
+    <header>
         <span>Laure Everwyn</span>
+
+        <nav v-if="!mobileMenu" class="menu menu-desktop">
+            <button class="nav-link" @click="handleScrollToSection('#whoami')">
+                Qui suis-je ?
+            </button>
+            <button
+                class="nav-link"
+                @click="handleScrollToSection('#projects')"
+            >
+                Projets
+            </button>
+            <button
+                class="nav-link"
+                @click="handleScrollToSection('#experiences')"
+            >
+                Parcours
+            </button>
+            <button class="nav-link" @click="handleScrollToSection('#cta')">
+                Contact
+            </button>
+        </nav>
 
         <AnimatePresence>
             <div
@@ -12,7 +33,7 @@
                     transition: { duration: 0.4, ease: 'easeOut' },
                 }"
                 class="bg-mobile"
-                @click="handleMobileMenu"
+                @click="mobileStore.handleMobileMenu"
             />
 
             <nav
@@ -23,21 +44,33 @@
                     exit: { x: 225 },
                     transition: { duration: 0.4, ease: 'easeOut' },
                 }"
-                class="menu"
+                class="menu menu-mobile"
             >
-                <a
-                    href="#whoami"
+                <button
                     class="nav-link"
-                    @click="scrollToSection('#whoami')"
-                    >Qui suis-je ?</a
+                    @click="handleScrollToSection('#whoami')"
                 >
-                <a href="#projects" class="nav-link">Projets</a>
-                <a href="#experiences" class="nav-link">Parcours</a>
-                <a href="#cta" class="nav-link">Contact</a>
+                    Qui suis-je ?
+                </button>
+                <button
+                    class="nav-link"
+                    @click="handleScrollToSection('#projects')"
+                >
+                    Projets
+                </button>
+                <button
+                    class="nav-link"
+                    @click="handleScrollToSection('#experiences')"
+                >
+                    Parcours
+                </button>
+                <button class="nav-link" @click="handleScrollToSection('#cta')">
+                    Contact
+                </button>
             </nav>
         </AnimatePresence>
 
-        <button id="btn-open" @click="handleMobileMenu">
+        <button id="btn-open" @click="mobileStore.handleMobileMenu()">
             <MenuIcon v-if="!mobileMenu" />
             <XIcon v-else />
         </button>
@@ -46,31 +79,26 @@
 
 <script setup lang="ts">
 import { MenuIcon, XIcon } from '@lucide/vue';
-import { useResizeObserver } from '@vueuse/core';
 import { easeInOut } from 'motion-v';
 
-const mobileMenu = ref(false);
-const header = useTemplateRef('header');
-const lenisRef = ref();
+const mobileStore = useMobileStore();
+const { mobileMenu } = storeToRefs(mobileStore);
 
-function handleMobileMenu() {
-    mobileMenu.value = !mobileMenu.value;
-    document.body.classList.contains('scroll-canceled')
-        ? document.body.classList.remove('scroll-canceled')
-        : document.body.classList.add('scroll-canceled');
-}
+const { refApp } = defineProps<{
+    refApp: any;
+}>();
 
-function scrollToSection(id: string) {
-    lenisRef.value.lenis?.scrollTo(id, {
-        duration: 1.6,
+function handleScrollToSection(id: string) {
+    const offsetVal = mobileStore ? -60 : -110;
+
+    mobileMenu.value = false;
+
+    refApp.lenis.scrollTo(id, {
+        offset: offsetVal,
+        duration: 0.8,
         easing: easeInOut,
     });
 }
-
-useResizeObserver(header, (entries) => {
-    if (entries[0]?.borderBoxSize[0]?.inlineSize == null) return;
-    mobileMenu.value = entries[0]?.borderBoxSize[0]?.inlineSize >= 750;
-});
 </script>
 
 <style scoped>
@@ -87,24 +115,29 @@ header {
 
     z-index: 5;
 
-    .nav-link {
-        text-decoration: none;
+    button.nav-link {
         color: black;
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+            border-bottom: none;
+        }
     }
 
-    button {
+    button#btn-open {
         border: none;
         background-color: transparent;
         width: fit-content;
         color: black;
 
-        &#btn-open {
-            position: absolute;
-            right: 12px;
-            top: 12px;
+        position: absolute;
+        right: 12px;
+        top: 12px;
 
-            z-index: 2;
-        }
+        z-index: 2;
     }
 
     span {
@@ -112,9 +145,10 @@ header {
         font-size: 18px;
     }
 
-    nav.menu {
+    nav.menu.menu-mobile {
         display: flex;
         flex-direction: column;
+        align-items: start;
         gap: 12px;
         padding: 48px 12px 12px 12px;
 
@@ -127,6 +161,16 @@ header {
         top: 0;
 
         z-index: 2;
+    }
+
+    nav.menu.menu-desktop {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        gap: 32px;
+
+        width: fit-content;
+        height: fit-content;
     }
 
     div.bg-mobile {
@@ -145,13 +189,12 @@ header {
         padding: 24px;
 
         nav.menu {
-            flex-direction: row;
-            position: static;
-            gap: 32px;
-            padding-top: 12px;
+        }
 
-            width: fit-content;
-            height: fit-content;
+        button.nav-link {
+            &:hover {
+                border-bottom: 1px solid black;
+            }
         }
 
         button#btn-close {

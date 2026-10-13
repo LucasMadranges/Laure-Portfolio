@@ -1,17 +1,19 @@
 <template>
-    <a :class="[`btn btn-${variant}`]" :href="href">
+    <component :is="type" :class="[`btn btn-${variant}`]" :href="href">
         <slot></slot>
-    </a>
+    </component>
 </template>
 
 <script setup lang="ts">
 interface Props {
-    href: string;
+    href?: string;
     variant?: 'primary' | 'secondary';
+    type?: 'button' | 'a';
 }
 
 withDefaults(defineProps<Props>(), {
     variant: 'primary',
+    type: 'a',
 });
 </script>
 
@@ -22,6 +24,7 @@ withDefaults(defineProps<Props>(), {
     justify-content: center;
     gap: 8px;
     border: 2px solid var(--color-primary);
+    cursor: pointer;
 
     width: 100%;
     text-align: center;
