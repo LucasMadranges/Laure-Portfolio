@@ -19,11 +19,16 @@
             </div>
 
             <div class="link-container">
-                <Button href="#projects" variant="primary"
+                <Button
+                    href="#projects"
+                    variant="primary"
+                    type="button"
+                    @click="handleScrollToSection('#projects')"
                     >Voir mes projets</Button
                 >
                 <Button
                     href="mailto:laure05everwyn@gmail.com"
+                    type="a"
                     variant="secondary"
                     >Me contacter</Button
                 >
@@ -41,6 +46,27 @@
         </div>
     </section>
 </template>
+
+<script setup lang="ts">
+import { useMobileStore } from '#imports';
+import { easeInOut } from 'motion-v';
+
+const mobileStore = useMobileStore();
+
+const { refApp } = defineProps<{
+    refApp: any;
+}>();
+
+function handleScrollToSection(id: string) {
+    const offsetVal = mobileStore ? -60 : -110;
+
+    refApp.lenis.scrollTo(id, {
+        offset: offsetVal,
+        duration: 0.8,
+        easing: easeInOut,
+    });
+}
+</script>
 
 <style scoped>
 section {

@@ -21,18 +21,13 @@ export default defineNuxtConfig({
             ],
         },
     },
-    modules: [
-        '@nuxt/image',
-        '@nuxt/fonts',
-        '@nuxt/eslint',
-        '@nuxt/hints',
-        '@vueuse/nuxt',
-        'motion-v/nuxt',
-        'lenis/nuxt',
-    ],
+    modules: ['@nuxt/image', '@nuxt/fonts', '@nuxt/eslint', '@nuxt/hints', '@vueuse/nuxt', 'motion-v/nuxt', 'lenis/nuxt', '@pinia/nuxt'],
     compatibilityDate: '2026-10-08',
     devtools: { enabled: true },
     motionV: {
         directives: true,
+    },
+    lenis: {
+        anchors: true,
     },
 });
