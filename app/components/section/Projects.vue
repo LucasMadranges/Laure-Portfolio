@@ -49,6 +49,7 @@
                     <div class="projects-element">
                         <NuxtImg
                             src="/salv/image-1.webp"
+                            alt="Première image du projet Salv Skate Co."
                             class="projects-img"
                         />
                         <span>Accueil, version ordinateur</span>
@@ -57,6 +58,7 @@
                         <div class="projects-element">
                             <NuxtImg
                                 class="projects-img"
+                                alt="Deuxième image du projet Salv Skate Co."
                                 src="/salv/image-2.webp"
                             />
                             <span>Fiche produit, version ordinateur</span>
@@ -64,6 +66,7 @@
                         <div class="projects-element">
                             <NuxtImg
                                 class="projects-img"
+                                alt="Troisième image du projet Salv Skate Co."
                                 src="/salv/image-3.webp"
                             />
                             <span>Produits, mobile</span>
@@ -71,6 +74,7 @@
                         <div class="projects-element">
                             <NuxtImg
                                 class="projects-img"
+                                alt="Quatrième image du projet Salv Skate Co."
                                 src="/salv/image-4.webp"
                             />
                             <span>Fiche produit, mobile</span>
@@ -122,6 +126,7 @@
                         <div class="projects-element">
                             <NuxtImg
                                 src="/enedis/image-1.png"
+                                alt="Première image du projet d'Enedis"
                                 class="projects-img"
                             />
                             <span>Choix du service</span>
@@ -129,6 +134,7 @@
                         <div class="projects-element">
                             <NuxtImg
                                 src="/enedis/image-2.png"
+                                alt="Deuxième image du projet d'Enedis"
                                 class="projects-img"
                             />
                             <span>Tableau de bord</span>
@@ -136,6 +142,7 @@
                         <div class="projects-element">
                             <NuxtImg
                                 src="/enedis/image-3.png"
+                                alt="Troisième image du projet d'Enedis"
                                 class="projects-img"
                             />
                             <span>Recherche et stock</span>
@@ -145,6 +152,7 @@
                         <div class="projects-element">
                             <NuxtImg
                                 class="projects-img"
+                                alt="Quatrième image du projet d'Enedis"
                                 src="/enedis/image-4.png"
                             />
                             <span>Historique des mouvements</span>
@@ -152,6 +160,7 @@
                         <div class="projects-element">
                             <NuxtImg
                                 class="projects-img"
+                                alt="Cinquième image du projet d'Enedis"
                                 src="/enedis/image-5.png"
                             />
                             <span>Alertes de stock</span>
@@ -159,6 +168,7 @@
                         <div class="projects-element">
                             <NuxtImg
                                 class="projects-img"
+                                alt="Sixième image du projet d'Enedis"
                                 src="/enedis/image-6.png"
                             />
                             <span>Ajout d'un équipement</span>
@@ -174,7 +184,7 @@
 import ImgSalv1 from '/salv/image-1.png';
 </script>
 
-<style>
+<style scoped>
 section {
     display: flex;
     flex-direction: column;

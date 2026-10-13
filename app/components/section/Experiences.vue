@@ -67,6 +67,7 @@
                         <div class="competences-img">
                             <NuxtImg
                                 src="/icons/figma.svg"
+                                alt="Icône Figma"
                                 height="20"
                                 width="20"
                             />
@@ -78,6 +79,7 @@
                         <div class="competences-img">
                             <NuxtImg
                                 src="/icons/indesign.svg"
+                                alt="Icône InDesign"
                                 height="20"
                                 width="20"
                             />
@@ -89,6 +91,7 @@
                         <div class="competences-img">
                             <NuxtImg
                                 src="/icons/wordpress.svg"
+                                alt="Icône Wordpress"
                                 height="20"
                                 width="20"
                             />
@@ -100,6 +103,7 @@
                         <div class="competences-img">
                             <NuxtImg
                                 src="/icons/google.svg"
+                                alt="Icône Google"
                                 height="20"
                                 width="20"
                             />

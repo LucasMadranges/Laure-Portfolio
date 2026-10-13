@@ -1,12 +1,12 @@
 <template>
-    <NuxtLink :class="[`btn btn-${variant}`]" :to="to">
+    <a :class="[`btn btn-${variant}`]" :href="href">
         <slot></slot>
-    </NuxtLink>
+    </a>
 </template>
 
 <script setup lang="ts">
 interface Props {
-    to: string;
+    href: string;
     variant?: 'primary' | 'secondary';
 }
 

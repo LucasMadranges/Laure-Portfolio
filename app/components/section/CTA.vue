@@ -3,7 +3,7 @@ import { MailIcon } from '@lucide/vue';
 </script>
 
 <template>
-    <section id="contact">
+    <section id="cta">
         <div>
             <h2>Vous proposez une alternance en design UX/UI ?</h2>
             <span
@@ -12,7 +12,7 @@ import { MailIcon } from '@lucide/vue';
             >
         </div>
 
-        <Button to="mailto:laure05everwyn@gmail.com" variant="secondary">
+        <Button href="mailto:laure05everwyn@gmail.com" variant="secondary">
             <MailIcon :size="20" />
             Écrire à Laure</Button
         >

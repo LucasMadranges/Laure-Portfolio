@@ -6,24 +6,16 @@
                 <p>Portfolio de design UX/UI</p>
             </div>
             <div class="footer-link">
-                <NuxtLink to="#whoami" class="footer-link"
-                    >Qui suis-je ?</NuxtLink
-                >
-                <NuxtLink to="#experiences" class="footer-link"
-                    >Parcours</NuxtLink
-                >
-                <NuxtLink to="#projects" class="footer-link">Projets</NuxtLink>
-                <NuxtLink to="#cta" class="footer-link">Contact</NuxtLink>
+                <a href="#whoami" class="footer-link">Qui suis-je ?</a>
+                <a href="#experiences" class="footer-link">Parcours</a>
+                <a href="#projects" class="footer-link">Projets</a>
+                <a href="#cta" class="footer-link">Contact</a>
             </div>
             <div class="footer-contact">
-                <NuxtLink
-                    class="footer-link"
-                    to="mailto:laure05everwyn@gmail.com"
-                    >laure05everwyn@gmail.com</NuxtLink
+                <a class="footer-link" href="mailto:laure05everwyn@gmail.com"
+                    >laure05everwyn@gmail.com</a
                 >
-                <NuxtLink class="footer-link" to="tel:0767178700"
-                    >07.67.17.87.00</NuxtLink
-                >
+                <a class="footer-link" href="tel:0767178700">07.67.17.87.00</a>
             </div>
         </div>
         <div class="footer-copyright">

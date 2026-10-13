@@ -19,13 +19,25 @@
             </div>
 
             <div class="link-container">
-                <Button to="#" variant="primary">Voir mes projets</Button>
-                <Button to="#" variant="secondary">Me contacter</Button>
+                <Button href="#projects" variant="primary"
+                    >Voir mes projets</Button
+                >
+                <Button
+                    href="mailto:laure05everwyn@gmail.com"
+                    variant="secondary"
+                    >Me contacter</Button
+                >
             </div>
         </div>
 
         <div class="image-container">
-            <NuxtImg class="image" src="/laure.webp" height="300" width="300" />
+            <NuxtImg
+                class="image"
+                src="/laure.webp"
+                alt="Photo de Laure Everwyn"
+                height="300"
+                width="300"
+            />
         </div>
     </section>
 </template>
@@ -74,6 +86,7 @@ section {
 
     .image-container {
         position: relative;
+        display: none;
 
         .image {
             object-fit: cover;
@@ -111,6 +124,22 @@ section {
 
                 right: -12px;
                 bottom: -6px;
+            }
+        }
+
+        .hero-content {
+            gap: 18px;
+
+            p {
+                &.hero-primary-content {
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+
+                &.hero-content {
+                    font-size: 16px;
+                    font-weight: 400;
+                }
             }
         }
     }

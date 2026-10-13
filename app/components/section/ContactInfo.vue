@@ -13,8 +13,8 @@ import { MailIcon, PhoneIcon, PinIcon } from '@lucide/vue';
                         <PhoneIcon height="20" width="20" />
                     </div>
 
-                    <NuxtLink class="contact-link" to="tel:07.67.17.87.00"
-                        >07.67.17.87.00</NuxtLink
+                    <a class="contact-link" href="tel:07.67.17.87.00"
+                        >07.67.17.87.00</a
                     >
                 </div>
 
@@ -23,10 +23,10 @@ import { MailIcon, PhoneIcon, PinIcon } from '@lucide/vue';
                         <MailIcon height="20" width="20" />
                     </div>
 
-                    <NuxtLink
+                    <a
                         class="contact-link"
-                        to="mailto:laure05everwyn@gmail.com"
-                        >laure05everwyn@gmail.com</NuxtLink
+                        href="mailto:laure05everwyn@gmail.com"
+                        >laure05everwyn@gmail.com</a
                     >
                 </div>
             </div>
@@ -37,23 +37,24 @@ import { MailIcon, PhoneIcon, PinIcon } from '@lucide/vue';
                         <PinIcon height="20" width="20" />
                     </div>
 
-                    <NuxtLink>Métropole Lilloise</NuxtLink>
+                    <span>Lille</span>
                 </div>
 
                 <div class="contact-element">
                     <div class="contact-icon">
                         <NuxtImg
                             src="/icons/linkedin.svg"
+                            alt="Icône LinkedIn"
                             height="20"
                             width="20"
                         />
                     </div>
 
-                    <NuxtLink
+                    <a
                         class="contact-link"
-                        to="https://www.linkedin.com/in/laure-everwyn-58217738b/"
+                        href="https://www.linkedin.com/in/laure-everwyn-58217738b/"
                         target="_blank"
-                        >LinkedIn</NuxtLink
+                        >LinkedIn</a
                     >
                 </div>
             </div>

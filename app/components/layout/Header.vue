@@ -25,10 +25,15 @@
                 }"
                 class="menu"
             >
-                <NuxtLink to="#whoami" class="nav-link">Qui suis-je ?</NuxtLink>
-                <NuxtLink to="#experiences" class="nav-link">Parcours</NuxtLink>
-                <NuxtLink to="#projects" class="nav-link">Projets</NuxtLink>
-                <NuxtLink to="#cta" class="nav-link">Contact</NuxtLink>
+                <a
+                    href="#whoami"
+                    class="nav-link"
+                    @click="scrollToSection('#whoami')"
+                    >Qui suis-je ?</a
+                >
+                <a href="#projects" class="nav-link">Projets</a>
+                <a href="#experiences" class="nav-link">Parcours</a>
+                <a href="#cta" class="nav-link">Contact</a>
             </nav>
         </AnimatePresence>
 
@@ -42,15 +47,24 @@
 <script setup lang="ts">
 import { MenuIcon, XIcon } from '@lucide/vue';
 import { useResizeObserver } from '@vueuse/core';
+import { easeInOut } from 'motion-v';
 
 const mobileMenu = ref(false);
 const header = useTemplateRef('header');
+const lenisRef = ref();
 
 function handleMobileMenu() {
     mobileMenu.value = !mobileMenu.value;
     document.body.classList.contains('scroll-canceled')
         ? document.body.classList.remove('scroll-canceled')
         : document.body.classList.add('scroll-canceled');
+}
+
+function scrollToSection(id: string) {
+    lenisRef.value.lenis?.scrollTo(id, {
+        duration: 1.6,
+        easing: easeInOut,
+    });
 }
 
 useResizeObserver(header, (entries) => {
@@ -82,6 +96,7 @@ header {
         border: none;
         background-color: transparent;
         width: fit-content;
+        color: black;
 
         &#btn-open {
             position: absolute;
