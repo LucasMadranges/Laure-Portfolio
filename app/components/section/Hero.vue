@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section id="hero">
         <div class="hero-content">
             <h1>Laure Everwyn</h1>
 
@@ -61,7 +61,6 @@ section {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    padding-top: 36px;
 
     .hero-content {
         display: flex;
@@ -126,7 +125,6 @@ section {
 
     @media only screen and (min-width: 750px) {
         flex-direction: row;
-        padding-top: 64px;
 
         .image-container {
             .image {
