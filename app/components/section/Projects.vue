@@ -180,10 +180,6 @@
     </section>
 </template>
 
-<script lang="ts" setup>
-import ImgSalv1 from '/salv/image-1.png';
-</script>
-
 <style scoped>
 section {
     display: flex;
@@ -293,15 +289,6 @@ section {
         .projects-container {
             .projects-element {
                 gap: 24px;
-
-                .projects-header {
-                    flex-direction: row;
-                    justify-content: space-between;
-
-                    .projects-description {
-                        width: 50%;
-                    }
-                }
 
                 .projects-body {
                     gap: 24px;
