@@ -3,22 +3,30 @@
         <span>Laure Everwyn</span>
 
         <nav v-if="!mobileMenu" class="menu menu-desktop">
-            <button class="nav-link" @click="handleScrollToSection('#whoami')">
+            <button
+                class="nav-link"
+                @click="scrollStore.handleScrollToSection(refApp, '#whoami')"
+            >
                 Qui suis-je ?
             </button>
             <button
                 class="nav-link"
-                @click="handleScrollToSection('#projects')"
+                @click="scrollStore.handleScrollToSection(refApp, '#projects')"
             >
                 Projets
             </button>
             <button
                 class="nav-link"
-                @click="handleScrollToSection('#experiences')"
+                @click="
+                    scrollStore.handleScrollToSection(refApp, '#experiences')
+                "
             >
                 Parcours
             </button>
-            <button class="nav-link" @click="handleScrollToSection('#cta')">
+            <button
+                class="nav-link"
+                @click="scrollStore.handleScrollToSection(refApp, '#cta')"
+            >
                 Contact
             </button>
         </nav>
@@ -48,23 +56,35 @@
             >
                 <button
                     class="nav-link"
-                    @click="handleScrollToSection('#whoami')"
+                    @click="
+                        scrollStore.handleScrollToSection(refApp, '#whoami')
+                    "
                 >
                     Qui suis-je ?
                 </button>
                 <button
                     class="nav-link"
-                    @click="handleScrollToSection('#projects')"
+                    @click="
+                        scrollStore.handleScrollToSection(refApp, '#projects')
+                    "
                 >
                     Projets
                 </button>
                 <button
                     class="nav-link"
-                    @click="handleScrollToSection('#experiences')"
+                    @click="
+                        scrollStore.handleScrollToSection(
+                            refApp,
+                            '#experiences'
+                        )
+                    "
                 >
                     Parcours
                 </button>
-                <button class="nav-link" @click="handleScrollToSection('#cta')">
+                <button
+                    class="nav-link"
+                    @click="scrollStore.handleScrollToSection(refApp, '#cta')"
+                >
                     Contact
                 </button>
             </nav>
@@ -79,26 +99,14 @@
 
 <script setup lang="ts">
 import { MenuIcon, XIcon } from '@lucide/vue';
-import { easeInOut } from 'motion-v';
 
 const mobileStore = useMobileStore();
 const { mobileMenu } = storeToRefs(mobileStore);
+const scrollStore = useScrollStore();
 
 const { refApp } = defineProps<{
     refApp: any;
 }>();
-
-function handleScrollToSection(id: string) {
-    const offsetVal = mobileStore ? -60 : -110;
-
-    mobileMenu.value = false;
-
-    refApp.lenis.scrollTo(id, {
-        offset: offsetVal,
-        duration: 0.8,
-        easing: easeInOut,
-    });
-}
 </script>
 
 <style scoped>
@@ -164,7 +172,7 @@ header {
     }
 
     nav.menu.menu-desktop {
-        display: flex;
+        display: none;
         flex-direction: row;
         position: static;
         gap: 32px;
@@ -188,10 +196,13 @@ header {
     @media only screen and (min-device-width: 750px) {
         padding: 24px;
 
-        nav.menu {
+        nav.menu.menu-desktop {
+            display: flex;
         }
 
         button.nav-link {
+            border-bottom: 1px solid white;
+
             &:hover {
                 border-bottom: 1px solid black;
             }

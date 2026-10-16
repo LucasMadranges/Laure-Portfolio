@@ -20,10 +20,11 @@
 
             <div class="link-container">
                 <Button
-                    href="#projects"
                     variant="primary"
                     type="button"
-                    @click="handleScrollToSection('#projects')"
+                    @click="
+                        scrollStore.handleScrollToSection(refApp, '#projects')
+                    "
                     >Voir mes projets</Button
                 >
                 <Button
@@ -48,24 +49,11 @@
 </template>
 
 <script setup lang="ts">
-import { useMobileStore } from '#imports';
-import { easeInOut } from 'motion-v';
-
-const mobileStore = useMobileStore();
+const scrollStore = useScrollStore();
 
 const { refApp } = defineProps<{
     refApp: any;
 }>();
-
-function handleScrollToSection(id: string) {
-    const offsetVal = mobileStore ? -60 : -110;
-
-    refApp.lenis.scrollTo(id, {
-        offset: offsetVal,
-        duration: 0.8,
-        easing: easeInOut,
-    });
-}
 </script>
 
 <style scoped>
@@ -136,9 +124,9 @@ section {
         }
     }
 
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 750px) {
         flex-direction: row;
-        padding-top: 96px;
+        padding-top: 64px;
 
         .image-container {
             .image {

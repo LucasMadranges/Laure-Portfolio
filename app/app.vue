@@ -11,7 +11,7 @@
             <SectionCTA />
         </main>
 
-        <LayoutFooter />
+        <LayoutFooter :refApp="lenisRef" />
     </VueLenis>
 </template>
 
