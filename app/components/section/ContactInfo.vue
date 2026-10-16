@@ -108,7 +108,8 @@ section {
 
                 .contact-link {
                     color: var(--color-text);
-                    text-decoration: underline;
+                    text-decoration: none;
+                    border-bottom: 1px solid black;
                 }
             }
         }
