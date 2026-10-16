@@ -6,10 +6,39 @@
                 <p>Portfolio de design UX/UI</p>
             </div>
             <div class="footer-link">
-                <a href="#whoami" class="footer-link">Qui suis-je ?</a>
-                <a href="#experiences" class="footer-link">Parcours</a>
-                <a href="#projects" class="footer-link">Projets</a>
-                <a href="#cta" class="footer-link">Contact</a>
+                <button
+                    class="footer-link"
+                    @click="
+                        scrollStore.handleScrollToSection(refApp, '#whoami')
+                    "
+                >
+                    Qui suis-je ?
+                </button>
+                <button
+                    class="footer-link"
+                    @click="
+                        scrollStore.handleScrollToSection(refApp, '#projects')
+                    "
+                >
+                    Projets
+                </button>
+                <button
+                    class="footer-link"
+                    @click="
+                        scrollStore.handleScrollToSection(
+                            refApp,
+                            '#experiences'
+                        )
+                    "
+                >
+                    Parcours
+                </button>
+                <button
+                    class="footer-link"
+                    @click="scrollStore.handleScrollToSection(refApp, '#cta')"
+                >
+                    Contact
+                </button>
             </div>
             <div class="footer-contact">
                 <a class="footer-link" href="mailto:laure05everwyn@gmail.com"
@@ -24,6 +53,16 @@
         </div>
     </footer>
 </template>
+
+<script setup lang="ts">
+import { useScrollStore } from '#imports';
+
+const scrollStore = useScrollStore();
+
+const { refApp } = defineProps<{
+    refApp: any;
+}>();
+</script>
 
 <style scoped>
 footer {
@@ -59,6 +98,18 @@ footer {
             display: flex;
             flex-direction: column;
             gap: 4px;
+
+            button {
+                border: none;
+                background-color: transparent;
+                font-size: 14px;
+                cursor: pointer;
+                border-bottom: 1px solid white;
+
+                &:hover {
+                    border-bottom: 1px solid black;
+                }
+            }
         }
 
         .footer-contact {
