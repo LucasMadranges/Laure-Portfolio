@@ -49,7 +49,7 @@ const LenisOptions = {
     --color-secondary: #d9b8ff;
     --color-secondary--hover: #b297d1;
     --color-tertiary: #f7edff;
-    --color-tertiary--hover: #c9c1d0;
+    --color-tertiary--hover: #e8e0ef;
 
     --color-text: #2f384c;
 

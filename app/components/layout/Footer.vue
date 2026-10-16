@@ -105,9 +105,10 @@ footer {
                 font-size: 14px;
                 cursor: pointer;
                 border-bottom: 1px solid white;
+                transition: border-bottom 0.2s;
 
                 &:hover {
-                    border-bottom: 1px solid black;
+                    border-bottom: 1px solid transparent;
                 }
             }
         }
@@ -133,6 +134,14 @@ footer {
         .footer-content {
             flex-direction: row;
             justify-content: space-between;
+
+            .footer-link {
+                button {
+                    &:hover {
+                        border-bottom: 1px solid black;
+                    }
+                }
+            }
         }
 
         .footer-copyright {

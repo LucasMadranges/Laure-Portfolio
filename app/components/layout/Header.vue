@@ -129,6 +129,7 @@ header {
         background-color: transparent;
         font-size: 16px;
         cursor: pointer;
+        transition: border-bottom 0.2s;
 
         &:hover {
             border-bottom: none;

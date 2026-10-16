@@ -35,6 +35,10 @@ withDefaults(defineProps<Props>(), {
     font-size: 14px;
     font-weight: 500;
 
+    transition:
+        background-color 0.2s,
+        border-color 0.2s;
+
     &.btn-primary {
         background-color: var(--color-primary);
         color: white;
@@ -51,6 +55,19 @@ withDefaults(defineProps<Props>(), {
         font-size: 16px;
         text-wrap: nowrap;
         height: fit-content;
+
+        &.btn-primary {
+            &:hover {
+                background-color: var(--color-primary--hover);
+                border: 2px solid var(--color-primary--hover);
+            }
+        }
+
+        &.btn-secondary {
+            &:hover {
+                background-color: var(--color-tertiary--hover);
+            }
+        }
     }
 }
 </style>
