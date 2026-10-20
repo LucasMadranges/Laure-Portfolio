@@ -1,4 +1,23 @@
 User-agent: *
 Allow: /
-Content-Usage: bots=y, train-ai=n
-Content-Signal: ai-train=no, search=yes
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+# Bloquer l'utilisation des contenus par les IA de Google (Gemini, Vertex)
+User-agent: Google-Extended
+Disallow: /
+
+# Bloquer le robot principal d'OpenAI (ChatGPT)
+User-agent: GPTBot
+Disallow: /
+
+# Bloquer le robot d'entraînement d'OpenAI (Sora, etc.)
+User-agent: OAI-SearchBot
+Disallow: /
+
+# Bloquer le robot d'Anthropic (Claude)
+User-agent: ClaudeBot
+Disallow: /
+
+# Bloquer le robot de Perplexity
+User-agent: PerplexityBot
+Disallow: /
