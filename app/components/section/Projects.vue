@@ -125,7 +125,7 @@
                     <div class="grid grid-inverted">
                         <div class="projects-element">
                             <NuxtImg
-                                src="/enedis/image-1.png"
+                                src="/enedis/image-1.webp"
                                 alt="Première image du projet d'Enedis"
                                 class="projects-img"
                             />
@@ -133,7 +133,7 @@
                         </div>
                         <div class="projects-element">
                             <NuxtImg
-                                src="/enedis/image-2.png"
+                                src="/enedis/image-2.webp"
                                 alt="Deuxième image du projet d'Enedis"
                                 class="projects-img"
                             />
@@ -141,7 +141,7 @@
                         </div>
                         <div class="projects-element">
                             <NuxtImg
-                                src="/enedis/image-3.png"
+                                src="/enedis/image-3.webp"
                                 alt="Troisième image du projet d'Enedis"
                                 class="projects-img"
                             />
@@ -153,7 +153,7 @@
                             <NuxtImg
                                 class="projects-img"
                                 alt="Quatrième image du projet d'Enedis"
-                                src="/enedis/image-4.png"
+                                src="/enedis/image-4.webp"
                             />
                             <span>Historique des mouvements</span>
                         </div>
@@ -161,7 +161,7 @@
                             <NuxtImg
                                 class="projects-img"
                                 alt="Cinquième image du projet d'Enedis"
-                                src="/enedis/image-5.png"
+                                src="/enedis/image-5.webp"
                             />
                             <span>Alertes de stock</span>
                         </div>
@@ -169,7 +169,7 @@
                             <NuxtImg
                                 class="projects-img"
                                 alt="Sixième image du projet d'Enedis"
-                                src="/enedis/image-6.png"
+                                src="/enedis/image-6.webp"
                             />
                             <span>Ajout d'un équipement</span>
                         </div>
@@ -204,10 +204,10 @@ section {
         @media only screen and (min-width: 750px) {
             row-gap: 24px;
             column-gap: 24px;
-            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
 
             &.grid-inverted {
-                grid-template-columns: 1fr 1fr 2fr;
+                grid-template-columns: 1fr 1fr 1fr;
             }
         }
     }

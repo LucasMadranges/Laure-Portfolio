@@ -38,6 +38,8 @@ const LenisOptions = {
     autoRef: false,
     direction: 'vertical',
 };
+
+defineOgImage('NuxtSeo.takumi');
 </script>
 
 <style>

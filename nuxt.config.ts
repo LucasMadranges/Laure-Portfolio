@@ -1,12 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    site: {
+        defaultLocale: 'fr',
+        url: 'https://laure-everwyn.netlify.app/',
+        name: 'Laure Everwyn',
+        description: `Je m'appelle Laure Everwyn, j'ai 19 ans, étudiante à MyDigitalSchool et voici mon portfolio présentant qui je suis, mon parcours ainsi que mes projets ! Enjoy !`,
+    },
     app: {
         head: {
-            title: 'Portfolio de Laure Everwyn',
             meta: [
+                { name: 'theme-color', content: '#9500ff' },
                 {
-                    name: 'description',
-                    content: `Je m'appelle Laure Everwyn, j'ai 19 ans, étudiante à MyDigitalSchool et voici mon portfolio présentant qui je suis, mon parcours ainsi que mes projets ! Enjoy 💫`,
+                    name: 'theme-color',
+                    content: '#6d00bb',
+                    media: '(prefers-color-scheme: dark)',
                 },
             ],
             htmlAttrs: {
@@ -21,7 +28,19 @@ export default defineNuxtConfig({
             ],
         },
     },
-    modules: ['@nuxt/image', '@nuxt/fonts', '@nuxt/eslint', '@nuxt/hints', '@vueuse/nuxt', 'motion-v/nuxt', 'lenis/nuxt', '@pinia/nuxt'],
+    modules: [
+        '@nuxt/image',
+        '@nuxt/fonts',
+        '@nuxt/eslint',
+        '@nuxt/hints',
+        '@vueuse/nuxt',
+        'motion-v/nuxt',
+        'lenis/nuxt',
+        '@pinia/nuxt',
+        '@nuxtjs/seo',
+        'nuxt-og-image',
+        '@nuxtjs/robots',
+    ],
     compatibilityDate: '2026-10-08',
     devtools: { enabled: true },
     motionV: {
@@ -29,5 +48,8 @@ export default defineNuxtConfig({
     },
     lenis: {
         anchors: true,
+    },
+    build: {
+        transpile: ['@lucide/vue'],
     },
 });

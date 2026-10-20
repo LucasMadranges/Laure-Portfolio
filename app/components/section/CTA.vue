@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MailIcon } from '@lucide/vue';
+import { Mail } from '@lucide/vue';
 </script>
 
 <template>
@@ -13,7 +13,7 @@ import { MailIcon } from '@lucide/vue';
         </div>
 
         <Button href="mailto:laure05everwyn@gmail.com" variant="secondary">
-            <MailIcon :size="20" />
+            <Mail height="20" width="20" />
             Écrire à Laure</Button
         >
     </section>
