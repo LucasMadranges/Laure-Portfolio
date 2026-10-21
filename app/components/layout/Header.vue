@@ -4,7 +4,13 @@
             class="logo-btn"
             @click="scrollStore.handleScrollToSection(refApp, '#hero')"
         >
-            <NuxtImg class="logo-img" src="/logo.svg" height="32" width="32" />
+            <NuxtImg
+                class="logo-img"
+                src="/logo.svg"
+                alt="Logo de Laure Everwyn"
+                height="32"
+                width="32"
+            />
         </button>
 
         <nav v-if="!mobileMenu" class="menu menu-desktop">
