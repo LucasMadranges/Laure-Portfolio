@@ -77,7 +77,7 @@ body {
         padding: 32px 12px;
 
         @media only screen and (min-width: 750px) {
-            padding: 32px 24px;
+            padding: 48px 24px;
         }
     }
 

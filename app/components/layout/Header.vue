@@ -1,6 +1,11 @@
 <template>
     <header>
-        <span>Laure Everwyn</span>
+        <button
+            class="logo-btn"
+            @click="scrollStore.handleScrollToSection(refApp, '#hero')"
+        >
+            <NuxtImg class="logo-img" src="/logo.svg" height="32" width="32" />
+        </button>
 
         <nav v-if="!mobileMenu" class="menu menu-desktop">
             <button
@@ -123,6 +128,20 @@ header {
 
     z-index: 5;
 
+    .logo-btn {
+        cursor: pointer;
+
+        background: transparent;
+        border: none;
+        width: 32px;
+        height: 32px;
+
+        .logo-img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
     button.nav-link {
         color: black;
         border: none;
@@ -137,14 +156,18 @@ header {
     }
 
     button#btn-open {
+        align-self: center;
         border: none;
         background-color: transparent;
         width: fit-content;
         color: black;
 
+        width: 24px;
+        height: 24px;
+
         position: absolute;
         right: 12px;
-        top: 12px;
+        top: 16px;
 
         z-index: 2;
     }
@@ -195,7 +218,19 @@ header {
     }
 
     @media only screen and (min-device-width: 750px) {
-        padding: 24px;
+        padding: 12px 24px;
+
+        .logo-btn {
+            background: transparent;
+            border: none;
+            width: 48px;
+            height: 48px;
+
+            .logo-img {
+                width: 48px;
+                height: 48px;
+            }
+        }
 
         nav.menu.menu-desktop {
             display: flex;

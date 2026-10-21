@@ -128,7 +128,7 @@ footer {
     }
 
     @media only screen and (min-width: 750px) {
-        padding: 48px 24px;
+        padding: 48px 24px 24px 48px;
         gap: 48px;
 
         .footer-content {
