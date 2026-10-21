@@ -35,16 +35,6 @@
                 >
             </div>
         </div>
-
-        <div class="image-container">
-            <NuxtImg
-                class="image"
-                src="/laure.webp"
-                alt="Photo de Laure Everwyn"
-                height="300"
-                width="300"
-            />
-        </div>
     </section>
 </template>
 
