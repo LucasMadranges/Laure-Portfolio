@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Mail, PhoneIcon, PinIcon } from '@lucide/vue';
+import { Mail, MapPin, PhoneIcon, PinIcon } from '@lucide/vue';
 </script>
 
 <template>
@@ -34,7 +34,7 @@ import { Mail, PhoneIcon, PinIcon } from '@lucide/vue';
             <div class="contact-container">
                 <div class="contact-element">
                     <div class="contact-icon">
-                        <PinIcon height="20" width="20" />
+                        <MapPin height="20" width="20" />
                     </div>
 
                     <span>Lille</span>
