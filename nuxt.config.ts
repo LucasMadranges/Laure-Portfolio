@@ -15,6 +15,10 @@ export default defineNuxtConfig({
                     content: '#6d00bb',
                     media: '(prefers-color-scheme: dark)',
                 },
+                {
+                    name: 'google-site-verification',
+                    content: 'jsAxinN70k4J2m_EKRiAE3tV80BGwHwOHKqsFUma1HI',
+                },
             ],
             htmlAttrs: {
                 lang: 'fr',
