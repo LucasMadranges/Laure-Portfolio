@@ -44,6 +44,7 @@ export default defineNuxtConfig({
         '@nuxtjs/seo',
         'nuxt-og-image',
         '@nuxtjs/robots',
+        'nuxt-email-renderer',
     ],
     compatibilityDate: '2026-10-08',
     devtools: { enabled: true },

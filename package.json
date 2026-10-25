@@ -26,6 +26,7 @@
     "motion": "^14.1.0",
     "motion-v": "^2.6.0",
     "nuxt": "^4.6.2",
+    "nuxt-email-renderer": "2.11.2",
     "nuxt-lenis": "^3.0.0",
     "nuxt-og-image": "7.0.7",
     "pinia": "^4.0.3",
